@@ -71,6 +71,8 @@ namespace HackerRankApp
             Console.WriteLine("1 - 2D Array DS");
             Console.WriteLine("2 - Left Rotation");
             Console.WriteLine("3 - New Year Chaos");
+            Console.WriteLine("4 - Minimum Swaps");
+            Console.WriteLine("5 - Array Manipulation");
             AddSeparator();
 
             do
@@ -95,6 +97,16 @@ namespace HackerRankApp
                     case "3":
                     case "New Year Chaos":
                         genericArrayExercise = new NewYearChaosApp();
+                        genericArrayExercise.Run();
+                        return;
+                    case "4":
+                    case "Minimum Swaps":
+                        genericArrayExercise = new MinimumSwapsApp();
+                        genericArrayExercise.Run();
+                        return;
+                    case "5":
+                    case "Array Manipulation":
+                        genericArrayExercise = new ArrayManipulationApp();
                         genericArrayExercise.Run();
                         return;
                     default:
