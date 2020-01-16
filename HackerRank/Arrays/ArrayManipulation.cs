@@ -7,33 +7,29 @@ namespace HackerRank.Arrays
 {
     public class ArrayManipulation
     {
-        //TODOFD - Fix
-        //Se isto nã o funcionar vai ser porque a ordem inversa tem de ser tratada com se fosse do inicio para o fim
-
-        public static int arrayManipulation(int size,
-                                            int operations,
-                                            int[][] matrix)
+        public static long arrayManipulation(int n,
+                                             int[][] queries)
         {
-            int[] arr = new int[size];
+            long[] arr = new long[n + 1];
 
-            for(int i = 0; i < operations; i++) 
+            int a, b, k;
+
+            foreach(int[] query in queries) 
             {
-                int start = matrix[i][0] - 1;
-                int end = matrix[i][1] - 1;
-                int value = matrix[i][2];
+                a = query[0] - 1;
+                b = query[1];
+                k = query[2];
 
-                while(start <= end) 
-                {
-                    arr[start] += value;
-                    start++;
-                }
+                arr[a] += k;
+                arr[b] -= k;
             }
 
-            int result = -1;
-
-            foreach (int val in arr) 
+            long result = -1;
+            long epsilon = 0;
+            foreach(long val in arr) 
             {
-                result = Math.Max(result, val);
+                epsilon += val;
+                result = Math.Max(epsilon, result);
             }
 
             return result;

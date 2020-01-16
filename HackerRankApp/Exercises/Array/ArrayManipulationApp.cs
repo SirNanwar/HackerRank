@@ -22,7 +22,7 @@ namespace HackerRankApp.Exercises.Array
                 arr[i] = System.Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
             }
 
-            int result = ArrayManipulation.arrayManipulation(a[0], a[1], arr);
+            long result = ArrayManipulation.arrayManipulation(a[0], arr);
 
             Console.WriteLine();
             Console.WriteLine("Result:");
