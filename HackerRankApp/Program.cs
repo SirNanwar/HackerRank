@@ -1,5 +1,6 @@
 ﻿using HackerRankApp.Exercises;
 using HackerRankApp.Exercises.Array;
+using HackerRankApp.Exercises.DictionaryAndHashMaps;
 using System;
 
 namespace HackerRankApp
@@ -44,6 +45,10 @@ namespace HackerRankApp
                     case "Arrays":
                         SelectArray(exerc as IGenericArrayExercise);
                         return;
+                    case "3":
+                    case "Dictionaries and Hash Maps":
+                        SelectDictionary(exerc as IGenericDictionaryExercise);
+                        return;
                     default:
                         Console.WriteLine("Unknown group, please try again." +
                                            Environment.NewLine);
@@ -59,6 +64,38 @@ namespace HackerRankApp
             Console.WriteLine("Bye!");
             Console.WriteLine("Press any key to leave");
             Console.ReadKey();
+        }
+
+        private static void SelectDictionary(IGenericDictionaryExercise genericDictionaryExercise)
+        {
+            Clean();
+            Console.WriteLine("Dictionary and Hash Map Exercises Selected");
+            AddSeparator();
+            Console.WriteLine("Please select exercise:");
+            Console.WriteLine("0 - Return");
+            Console.WriteLine("1 - Counting Triplets");
+            AddSeparator();
+
+            do 
+            {
+                string key = Console.ReadLine();
+                switch (key) 
+                {
+                    case "0":
+                    case "Return":
+                        Init();
+                        return;
+                    case "1":
+                    case "Counting Triplets":
+                        genericDictionaryExercise = new CountTripletsApp();
+                        genericDictionaryExercise.Run();
+                        return;
+                    default:
+                        Console.WriteLine("Unknown exercise, please try again." +
+                                          Environment.NewLine);
+                        break;
+                }
+            } while (true);
         }
 
         private static void SelectArray(IGenericArrayExercise genericArrayExercise)
@@ -185,6 +222,7 @@ namespace HackerRankApp
             Console.WriteLine("0 - Exit");
             Console.WriteLine("1 - Warm-up Challenges");
             Console.WriteLine("2 - Arrays");
+            Console.WriteLine("3 - Dictionaries and Hash Maps");
         }
     }
 }

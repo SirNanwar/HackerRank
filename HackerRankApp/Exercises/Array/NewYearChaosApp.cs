@@ -7,9 +7,6 @@ namespace HackerRankApp.Exercises.Array
 {
     class NewYearChaosApp : IGenericArrayExercise
     {
-        private int[] a;
-        private int d;
-
         public void Run()
         {
             PrintProblem();
