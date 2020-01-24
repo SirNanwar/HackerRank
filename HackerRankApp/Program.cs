@@ -74,6 +74,7 @@ namespace HackerRankApp
             Console.WriteLine("Please select exercise:");
             Console.WriteLine("0 - Return");
             Console.WriteLine("1 - Counting Triplets");
+            Console.WriteLine("2 - Ransom Note");
             AddSeparator();
 
             do 
@@ -88,6 +89,11 @@ namespace HackerRankApp
                     case "1":
                     case "Counting Triplets":
                         genericDictionaryExercise = new CountTripletsApp();
+                        genericDictionaryExercise.Run();
+                        return;
+                    case "2":
+                    case "Ransom Note":
+                        genericDictionaryExercise = new RansomNoteApp();
                         genericDictionaryExercise.Run();
                         return;
                     default:
