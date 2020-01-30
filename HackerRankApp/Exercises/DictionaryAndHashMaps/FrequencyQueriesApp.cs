@@ -8,7 +8,6 @@ namespace HackerRankApp.Exercises.DictionaryAndHashMaps
     public class FrequencyQueriesApp : IGenericDictionaryExercise
     {
         private long a;
-        private int[][] d;
 
         public void Run()
         {
@@ -17,15 +16,15 @@ namespace HackerRankApp.Exercises.DictionaryAndHashMaps
             Console.WriteLine("Number of queries:");
             a = long.Parse(Console.ReadLine());
 
-            int[][] d = new int[a][];
+            List<List<int>> d = new List<List<int>>();
             
             Console.WriteLine("Queries:");
             for (int i = 0; i < a; i++)
             {
-                d[i] = System.Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
+                d[i] = new List<int>(System.Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp)));
             }
 
-            int[] result = FrequencyQueries.freqQuery(d);
+            List<int> result = FrequencyQueries.freqQuery(d);
 
             Console.WriteLine();
             Console.WriteLine("Result:");

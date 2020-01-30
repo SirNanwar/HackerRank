@@ -66,6 +66,14 @@ namespace HackerRankApp
             Console.ReadKey();
         }
 
+        private static void ListExerciseGroups()
+        {
+            Console.WriteLine("0 - Exit");
+            Console.WriteLine("1 - Warm-up Challenges");
+            Console.WriteLine("2 - Arrays");
+            Console.WriteLine("3 - Dictionaries and Hash Maps");
+        }
+
         private static void SelectDictionary(IGenericDictionaryExercise genericDictionaryExercise)
         {
             Clean();
@@ -75,6 +83,7 @@ namespace HackerRankApp
             Console.WriteLine("0 - Return");
             Console.WriteLine("1 - Counting Triplets");
             Console.WriteLine("2 - Ransom Note");
+            Console.WriteLine("3 - Two Strings");
             AddSeparator();
 
             do 
@@ -94,6 +103,11 @@ namespace HackerRankApp
                     case "2":
                     case "Ransom Note":
                         genericDictionaryExercise = new RansomNoteApp();
+                        genericDictionaryExercise.Run();
+                        return;
+                    case "3":
+                    case "Two Strings":
+                        genericDictionaryExercise = new TwoStringsApp();
                         genericDictionaryExercise.Run();
                         return;
                     default:
@@ -221,14 +235,6 @@ namespace HackerRankApp
             Console.WriteLine();
             Console.WriteLine("---+----+----+----+----+----+----+----+----+----+---+----+----+----+----+----+----+----+----+----+");
             Console.WriteLine();
-        }
-
-        private static void ListExerciseGroups()
-        {
-            Console.WriteLine("0 - Exit");
-            Console.WriteLine("1 - Warm-up Challenges");
-            Console.WriteLine("2 - Arrays");
-            Console.WriteLine("3 - Dictionaries and Hash Maps");
         }
     }
 }
